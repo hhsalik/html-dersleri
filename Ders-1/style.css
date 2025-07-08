@@ -1,0 +1,497 @@
+/* Temel sayfa ayarları */
+body {
+  background: linear-gradient(135deg, #1f1c2c, #928dab); /* Sayfa arka planı: koyu mor ve gri geçişli degrade */
+  color: #f0f0f0; /* Sayfa genel yazı rengi: açık gri */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern ve okunabilir yazı tipi ailesi */
+  margin: 0; /* Sayfanın dış kenar boşluğunu sıfırlar */
+  padding: 0; /* Sayfanın iç boşluğunu sıfırlar */
+}
+
+.box {
+  background-color: rgba(255, 255, 255, 0.15); /* Hafif daha opak cam efekti */
+  color: #222; /* Yazı rengini koyulaştırdım */
+  padding: 30px;
+  border-radius: 20px; /* Köşeleri biraz daha yuvarlattım */
+  flex: 1;
+  text-align: center;
+  font-size: 1.6rem;
+  backdrop-filter: blur(10px); /* Cam efekti daha belirgin */
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.2), /* Daha yumuşak dış gölge */
+    inset 0 0 12px rgba(255, 255, 255, 0.3); /* İçeride parlaklık efekti */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* Üzerine gelince el işareti */
+}
+
+.box:hover {
+  transform: translateY(-8px) scale(1.05); /* Yüzer gibi hafif yukarı ve büyüme */
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.35),
+    inset 0 0 16px rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.25); /* Hover’da biraz daha opak */
+  color: #111; /* Yazı rengi koyulaşır */
+}
+
+
+/* Form genel görünümü */
+form {
+  max-width: 500px; /* Formun maksimum genişliği 500px olur */
+  margin: 40px auto; /* Üst-alt 40px boşluk, yatayda ortalanır */
+  background-color: rgba(255, 255, 255, 0.05); /* Saydam form arka planı */
+  padding: 25px; /* Formun iç boşluğu */
+  border-radius: 12px; /* Kenarları yumuşatır */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Gölge efekti */
+  backdrop-filter: blur(6px); /* Cam efekti için bulanıklık */
+}
+
+/* Menü bağlantılarına özel stil */
+.menu li a {
+  color: #81f7d8; /* Açık mavi-yeşil bağlantı rengi */
+  text-decoration: none; /* Altı çizili olmaz */
+  position: relative;
+  font-weight: bold; /* Kalın yazı */
+  transition: color 0.3s ease; /* Renk geçişini yumuşak hale getirir */
+}
+
+
+.menu li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #81f7d8;
+  transition: width 0.3s ease;
+}
+
+.menu li a:hover {
+  color: #4CAF50;
+}
+
+.menu li a:hover::after {
+  width: 100%; /* Alt çizgi animasyonu */
+}
+
+
+/* Genel bağlantı stili */
+a {
+  color: #a1c4fd; /* Açık mavi yazı rengi */
+  text-decoration: none; /* Alt çizgi yok */
+  font-weight: 500; /* Yarı kalın yazı */
+}
+
+a:hover {
+  text-decoration: underline; /* Üzerine gelince altı çizilir */
+  color: #ffb6b6; /* Üzerine gelince pembe-kırmızı renk olur */
+}
+
+/* Üst menü çubuğu */
+nav {
+  background: rgba(0, 0, 0, 0.5); /* Yarı saydam koyu arka plan */
+  padding: 15px; /* İç boşluk */
+  margin-bottom: 30px; /* Altında boşluk bırakır */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Menü çubuğuna gölge verir */
+}
+
+/* Menü listesi */
+.menu {
+  list-style: none; /* Liste işaretlerini kaldırır */
+  display: flex; /* Yatayda sıralar */
+  gap: 25px; /* Öğeler arası boşluk */
+  margin: 0; /* Dış boşluk sıfır */
+  padding: 0; /* İç boşluk sıfır */
+  justify-content: center; /* Menü elemanlarını ortalar */
+}
+
+/* Form elemanları (input ve textarea) */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 90%; /* Genişliği form kutusunun %90'ı kadar olur */
+  padding: 10px; /* İç boşluk */
+  margin-bottom: 15px; /* Altında boşluk bırakır */
+  border-radius: 7px; /* Köşeleri yumuşatır */
+  border: none; /* Kenarlık kaldırılır */
+  font-size: 18px; /* Yazı boyutu */
+  background-color: rgba(255, 255, 255, 0.2); /* Saydam iç kutu rengi */
+  color: white; /* Yazı rengi beyaz */
+}
+
+/* Gönder butonu stili */
+input[type="submit"] {
+  background-color: rgba(0, 94, 39, 0.91); /* Örnek rgba */
+  color: white; /* Yazı rengi */
+  padding: 12px 25px; /* İç boşluk: üst-alt 12px, sağ-sol 25px */
+  border: none; /* Kenarlık yok */
+  border-radius: 10px; /* Yuvarlatılmış köşe */
+  cursor: pointer; /* Fare imleci el olur */
+  font-size: 18px; /* Yazı boyutu */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Renk geçişi yumuşak olur */
+}
+
+input[type="submit"]:hover {
+  background-color: #005fa3;
+  transform: scale(1.05); /* Hafif büyüme */
+  box-shadow: 0 8px 15px rgba(0, 122, 204, 0.4); /* Gölge efekti */
+}
+
+/* Etiketlerin stili */
+label {
+  display: block; /* Tam genişlik kaplar */
+  margin-bottom: 8px; /* Altında boşluk bırakır */
+  color: #ffffff; /* Beyaz renkli etiket yazısı */
+}
+
+/* Ana başlık stili */
+h1 {
+  background-color: rgba(0, 0, 0, 0.4); /* Yarı saydam siyah arka plan */
+  color: #ffd27f; /* Altın sarısı yazı rengi */
+  padding: 15px 40px; /* İç boşluk */
+  border: none; /* Kenarlık yok */
+  border-radius: 20px; /* Oval köşe */
+  cursor: pointer; /* El imleci görünür */
+  font-size: 48px; /* Büyük yazı boyutu */
+  width: fit-content; /* Genişlik yazıya göre ayarlanır */
+  margin: 0 auto 20px; /* Ortalanır ve alt boşluk bırakılır */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5); /* Gölge efekti */
+}
+
+/* Küçük ekranlar için responsive ayar */
+@media (max-width: 600px) {
+  .menu {
+    flex-direction: column; /* Menü elemanları dikey dizilir */
+    align-items: center; /* Ortalanır */
+  }
+
+  h1 {
+    font-size: 36px; /* Küçük ekranlarda başlık küçülür */
+    text-align: center; /* Başlık ortalanır */
+  }
+}
+
+h1:hover {
+  background: linear-gradient(to right, #ffd27f, #ff9a9e);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Non-webkit uyumlu çözüm için */
+  display: inline-block;
+  transform: scale(1.05);
+}
+
+/* Alt başlık (h2) */
+h2 {
+  color: #b9fbc0; /* Açık yeşilimsi yazı rengi */
+  font-size: 2rem; /* Orta-büyük yazı boyutu */
+  margin-top: 30px; /* Üst boşluk bırakılır */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Alt çizgi */
+  padding-bottom: 5px; /* Çizgi ile yazı arasında boşluk */
+}
+
+/* Paragraflar */
+p {
+  line-height: 1.6; /* Satır aralığı genişliği */
+  margin-bottom: 15px; /* Paragraflar arasında boşluk bırakır */
+}
+
+figure {
+  max-width: 320px;
+  margin: 40px auto; /* Ortala, üst-alt boşluk */
+  background: rgba(255, 255, 255, 0.1); /* Yarı saydam kutu */
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  backdrop-filter: blur(6px); /* Cam efekti */
+  transition: transform 0.3s ease;
+}
+
+figure:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+}
+
+figure img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+figcaption {
+  margin-top: 12px;
+  font-style: italic;
+  color: #ffd27f;
+  text-align: center;
+  font-weight: 600;
+}
+
+
+figcaption {
+  margin-top: 10px; /* Görsel ile açıklaması arasında boşluk */
+  font-style: italic; /* Eğik yazı stili */
+  color: #eee; /* Açık gri yazı rengi */
+}
+
+/* Kutuların dizildiği alan */
+.kutu {
+  display: flex; /* Yatay dizilim */
+  gap: 50px; /* Kutular arasında boşluk */
+  margin: 20px 0; /* Üst-alt boşluk */
+  align-items: center; /* Dikeyde ortalama */
+  flex-wrap: wrap; /* Taşma olursa alta geçer */
+}
+
+
+/* Ana içerik alanı */
+main {
+  padding: 20px; /* İç boşluk */
+  background-color: rgba(255, 255, 255, 0.05); /* Saydam arka plan */
+  border-radius: 12px; /* Yuvarlatılmış köşeler */
+  margin: 0 auto 40px; /* Alt boşluk ve ortalama */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Gölge efekti */
+  backdrop-filter: blur(5px); /* Cam efekti */
+}
+
+/* Üst başlık alanı */
+header {
+  background-color: rgba(0, 0, 0, 0.3); /* Yarı saydam koyu arka plan */
+  padding: 30px; /* İç boşluk */
+  text-align: center; /* Ortala */
+  border-radius: 12px; /* Köşeleri yumuşat */
+  margin-bottom: 20px; /* Alt boşluk */
+}
+
+/* Sayfa alt kısmı */
+footer {
+  background-color: rgba(0, 0, 0, 0.5); /* Koyu saydam arka plan */
+  color: #ccc; /* Açık gri yazı rengi */
+  text-align: center; /* Ortala */
+  padding: 15px; /* İç boşluk */
+  border-radius: 10px; /* Yuvarlatılmış köşe */
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5); /* Yukarıya doğru gölge verir */
+}
+
+/* Yan içerik alanı (aside) */
+aside {
+  margin: 30px 0; /* Üst ve alt boşluk */
+  text-align: center; /* Ortala */
+}
+
+
+
+/* Kutulara animasyon tanımı */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1, h2, p {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+h1:hover, h2:hover, p:hover {
+  transform: scale(1.02); /* Üzerine gelince hafif büyür */
+  color: #ffd27f; /* Hafif vurgulu renk değişimi */
+}
+
+/* Menü bağlantılarına giriş animasyonu */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu li {
+  opacity: 0;
+  animation: slideIn 0.5s ease forwards;
+}
+
+.menu li:nth-child(1) { animation-delay: 0.1s; }
+.menu li:nth-child(2) { animation-delay: 0.2s; }
+.menu li:nth-child(3) { animation-delay: 0.3s; }
+.menu li:nth-child(4) { animation-delay: 0.4s; }
+/* Menüdeki eleman sayısına göre devam edebilirsin */
+
+body {
+  animation: fadeBody 1s ease-in-out;
+}
+
+@keyframes fadeBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+input[type="submit"]:active {
+  transform: scale(0.95); /* Bastırma efekti */
+  box-shadow: 0 4px 8px rgba(0, 122, 204, 0.4);
+}
+
+#galeri {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* Galeri fotoğrafları */
+.gallery img {
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox stili */
+#lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#lightbox.hidden {
+  display: none;
+}
+
+#lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px white;
+}
+
+/* Kapatma çarpısı */
+#close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s;
+}
+
+#close:hover {
+  color: #ff6666;
+}
+
+button {
+  background-color: #4CAF50; /* Yeşil ton */
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 10px 5px; /* Dış boşluk */
+  box-shadow: 0 5px 15px rgba(0, 128, 0, 0.4);
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #3a8a36;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 128, 0, 0.6);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 10px rgba(0, 90, 0, 0.6);
+}
+
+#saat {
+  font-family: 'Courier New', Courier, monospace;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 15px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  user-select: none;
+}
+
+.analog-saat {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 12px solid #ffd27f;
+  border-radius: 50%;
+  margin: 20px auto 40px;
+  background: rgba(0,0,0,0.4);
+  box-shadow: 0 0 15px #ffd27f;
+}
+
+.akrep, .yelkovan, .saniye {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(0deg);
+  transition: transform 0.5s cubic-bezier(0.4, 2.34, 0.3, 1);
+}
+
+.akrep {
+  width: 6px;
+  height: 60px;
+  background: #ffd27f;
+  border-radius: 6px;
+  z-index: 3;
+}
+
+.yelkovan {
+  width: 4px;
+  height: 80px;
+  background: #a1c4fd;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.saniye {
+  width: 2px;
+  height: 90px;
+  background: #ff6f91;
+  border-radius: 2px;
+  z-index: 1;
+}
