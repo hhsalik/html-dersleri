@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>FORM</title>
+        <link rel="stylesheet" href="form.css">
+    </head>
+
+    <body>
+       
+        <form action="">
+            <input type="hidden" value="bilgi-formu" name="bilgi-formu">
+            <div class="form-row">
+                <label for="adi">Adı</label>
+                <input name="adi" id="adi" type="text" required placeholder="Hasan SALİK">
+            </div>
+
+            <div class="form-row">
+                <label for="tel">Telefon</label>
+                <input name="tel" id="tel" type="tel" required>
+            </div>
+
+            <div class="form-row">
+                <label for="mail">E-mail</label>
+                <input name="mail" id="mail" type="email">
+            </div>
+
+            <div class="form-row"> 
+                <label for="mesaj">Mesaj</label>
+                <textarea name="mesaj" id="mesaj" rows="3"></textarea>
+            </div>
+
+            <div class="form-row">
+                <label for="sehir">Şehir</label>
+                <select name="sehir" id="sehir">
+                    <option value="34">İstanbul</option>
+                    <option value="35">İzmir</option>
+                    <option value="23">Elazığ</option>
+                    <option value="16">Bursa</option>
+                    <option value="02" selected>Adıyaman</option>
+                    <option value="47">Mardin</option>
+                </select>
+            </div>
+
+            <div class="radio-container">
+                <p>Sevdiğiniz Renk</p>
+                <label><input type="radio" name="renk" value="kirmizi" checked>Kırmızı</label>
+                <label><input type="radio" name="renk" value="yesil">Yeşil</label>
+                <label><input type="radio" name="renk" value="sarı">Sarı</label>
+                <label><input type="radio" name="renk" value="siyah">siyah</label> 
+            </div>
+            
+            <div class="form-row zor">
+                <label for="seç">Hasanı Seviyor musun?</label>
+                <input type="radio" name="seçenek" value="evet" checked>Evet!!
+                <input type="radio" name="seçenek" value="hayır" disabled>Hayır
+            </div>
+
+            <div class="form-row">
+                <button type="reset">Sıfırla</button>
+                <button type="submit">Gönder</button>
+            </div>
+
+
+
+        </form>
+
+    </body>
+</html>
