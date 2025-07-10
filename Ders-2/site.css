@@ -28,12 +28,18 @@ h3{
     font-weight: normal;
 }
 .gray{
-    color: gray;
+    color: gray;}
 
 
 .ff-sans{
     font-family: sans-serif;
 }
+.fontt {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+  }
 blockquote{
     font-size: 1.5em;
 }
+
